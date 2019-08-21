@@ -1,0 +1,23 @@
+{
+  "name": "wrc-ical-generator",
+  "version": "1.0.0",
+  "description": "Generates ical of rally stages from wrc plus event json",
+  "main": "src/index.ts",
+  "scripts": {
+    "run": "node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ical-generator": "^1.7.2",
+    "moment": "^2.24.0",
+    "node-fetch": "^2.6.0",
+    "typescript": "^3.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "^12.7.2",
+    "@types/node-fetch": "^2.5.0"
+  }
+}
