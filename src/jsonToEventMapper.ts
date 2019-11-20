@@ -1,18 +1,19 @@
-import moment = require('moment');
-import Stage from './model/stage';
-import Rally from './model/rally';
+import moment = require("moment");
+
+import Rally from "./model/rally";
+import Stage from "./model/stage";
 
 export const map = (rawData: any) => {
   const event = rawData.rallyEvent;
   const stages = mapStages(event.days);
-  return new Rally(stages)
+  return new Rally(stages);
 };
 
 const mapStages = (days: any) => {
   return Object.values(days)
     .map((day: any) => Array.from(day.epgElements))
     .reduce((acc, array) => acc.concat(array))
-    .map((epgElement) => mapStage(epgElement))
+    .map((epgElement) => mapStage(epgElement));
 };
 
 const mapStage = (epgElement: any) => {

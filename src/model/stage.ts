@@ -1,4 +1,4 @@
-import moment from 'moment';
+import moment from "moment";
 
 export default class Stage {
   public startDate: moment.Moment;

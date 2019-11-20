@@ -4,6 +4,7 @@
   "description": "Generates ical of rally stages from wrc plus event json",
   "main": "src/index.ts",
   "scripts": {
+    "lint": "tslint --project ./tsconfig.json",
     "run": "node src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,6 +19,7 @@
   },
   "devDependencies": {
     "@types/node": "^12.7.2",
-    "@types/node-fetch": "^2.5.0"
+    "@types/node-fetch": "^2.5.0",
+    "tslint": "^5.20.1"
   }
 }

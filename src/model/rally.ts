@@ -1,4 +1,4 @@
-import Stage from './stage';
+import Stage from "./stage";
 
 export default class Rally {
   public stages: Stage[] = [];

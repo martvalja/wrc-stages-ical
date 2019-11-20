@@ -1,6 +1,7 @@
-import {map} from './jsonToEventMapper';
-import fetch from 'node-fetch';
-import {createIcal} from './icalHelper';
+import fetch from "node-fetch";
+
+import {createIcal} from "./icalHelper";
+import {map} from "./jsonToEventMapper";
 
 const dataUrl = "https://plus.wrc.com/cache/epgData/epgActive.json";
 
@@ -14,10 +15,10 @@ export const handler = async (_event: any = {}): Promise<any> => {
   const rally = await fetchWrcData();
   const cal = createIcal(rally.stages.filter((stage) => stage.isStage()));
   return {
-    statusCode: 200,
+    body: cal.toString(),
     headers: {
-      "Content-Type": "text/calendar"
+      "Content-Type": "text/calendar",
     },
-    body: cal.toString()
+    statusCode: 200,
   };
 };
