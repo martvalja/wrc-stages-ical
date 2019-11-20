@@ -1,7 +1,7 @@
 import moment from 'moment';
 
-import {isScheduledEventStage} from '../src/scheduledEventHelper';
 import ScheduledEvent from '../src/model/scheduledEvent';
+import {isScheduledEventStage} from '../src/scheduledEventHelper';
 
 describe('isStage should', () => {
   test('be false when scheduled event has empty titles', () => {

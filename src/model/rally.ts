@@ -1,4 +1,5 @@
 import ScheduledEvent from './scheduledEvent';
+
 import {isScheduledEventStage} from '../scheduledEventHelper';
 
 export default class Rally {
