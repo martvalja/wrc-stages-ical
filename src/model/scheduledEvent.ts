@@ -1,6 +1,6 @@
-import moment from "moment";
+import moment from 'moment';
 
-export default class Stage {
+export default class ScheduledEvent {
   public startDate: moment.Moment;
   public endDate: moment.Moment;
   public shortTitle: string;
@@ -14,13 +14,13 @@ export default class Stage {
   }
 
   public isStage(): boolean {
-    if (this.title.toLowerCase().startsWith("ss")) {
+    if (this.title.toLowerCase().startsWith('ss')) {
       return true;
     }
-    if (this.title.toLowerCase().includes("power stage")) {
+    if (this.title.toLowerCase().includes('power stage')) {
       return true;
     }
-    if (this.shortTitle.toLowerCase().includes("power stage")) {
+    if (this.shortTitle.toLowerCase().includes('power stage')) {
       return true;
     }
     return false;

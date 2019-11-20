@@ -13,6 +13,7 @@
       "severity": "warning",
       "options": ["debug", "info", "log", "time", "timeEnd", "trace"]
     },
+    "quotemark": [true, "single"],
     "variable-name": [
       true,
       "ban-keywords",

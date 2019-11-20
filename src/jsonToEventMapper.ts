@@ -1,15 +1,12 @@
-import moment = require("moment");
+import moment = require('moment');
+import ScheduledEvent from './model/scheduledEvent';
 
-import Rally from "./model/rally";
-import Stage from "./model/stage";
-
-export const map = (rawData: any) => {
+export const mapRawDataToScheduledEvents = (rawData: any) => {
   const event = rawData.rallyEvent;
-  const stages = mapStages(event.days);
-  return new Rally(stages);
+  return mapEvents(event.days);
 };
 
-const mapStages = (days: any) => {
+const mapEvents = (days: any) => {
   return Object.values(days)
     .map((day: any) => Array.from(day.epgElements))
     .reduce((acc, array) => acc.concat(array))
@@ -21,5 +18,5 @@ const mapStage = (epgElement: any) => {
   const title = epgElement.title;
   const start = moment(epgElement.start);
   const end = moment(epgElement.end);
-  return new Stage(start, end, title, shortTitle);
+  return new ScheduledEvent(start, end, title, shortTitle);
 };

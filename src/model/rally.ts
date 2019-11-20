@@ -1,9 +1,9 @@
-import Stage from "./stage";
+import ScheduledEvent from './scheduledEvent';
 
 export default class Rally {
-  public stages: Stage[] = [];
+  public stages: ScheduledEvent[] = [];
 
-  public constructor(stages: Stage[]) {
+  public constructor(stages: ScheduledEvent[]) {
     this.stages = stages;
   }
 }
