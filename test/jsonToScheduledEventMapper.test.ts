@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-import {mapRawDataToScheduledEvents} from '../src/jsonToEventMapper';
+import {mapRawDataToScheduledEvents} from '../src/jsonToScheduledEventMapper';
 
 describe('mapRawDataToScheduledEvents should', () => {
   test('return correct number of scheduled events', () => {

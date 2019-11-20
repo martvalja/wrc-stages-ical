@@ -1,9 +1,13 @@
 import ScheduledEvent from './scheduledEvent';
 
 export default class Rally {
-  public stages: ScheduledEvent[] = [];
+  private readonly scheduledEvents: ScheduledEvent[] = [];
 
-  public constructor(stages: ScheduledEvent[]) {
-    this.stages = stages;
+  public constructor(scheduledEvents: ScheduledEvent[]) {
+    this.scheduledEvents = scheduledEvents;
+  }
+
+  public get stages() {
+    return this.scheduledEvents.filter((scheduledEvent) => scheduledEvent.isStage());
   }
 }

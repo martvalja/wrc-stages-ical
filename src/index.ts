@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 
 import {createIcal} from './icalHelper';
-import {mapRawDataToScheduledEvents} from './jsonToEventMapper';
+import {mapRawDataToScheduledEvents} from './jsonToScheduledEventMapper';
 import Rally from './model/rally';
 
 const dataUrl = 'https://plus.wrc.com/cache/epgData/epgActive.json';
@@ -15,7 +15,7 @@ const fetchWrcData = async () => {
 
 export const handler = async (_event: any = {}): Promise<any> => {
   const rally = await fetchWrcData();
-  const cal = createIcal(rally.stages.filter((stage) => stage.isStage()));
+  const cal = createIcal(rally.stages);
   return {
     body: cal.toString(),
     headers: {
