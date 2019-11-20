@@ -12,7 +12,7 @@ const fetchWrcData = async () => {
 
 export const handler = async (_event: any = {}): Promise<any> => {
   const rally = await fetchWrcData();
-  const cal = createIcal(rally.stages.filter((stage) => stage.title.startsWith("SS")));
+  const cal = createIcal(rally.stages.filter((stage) => stage.isStage()));
   return {
     statusCode: 200,
     headers: {
