@@ -1,15 +1,15 @@
-import ScheduledEvent from './scheduledEvent';
-
-import {isScheduledEventStage} from '../scheduledEventHelper';
+import Asset from './asset';
 
 export default class Rally {
-  private readonly scheduledEvents: ScheduledEvent[] = [];
+    public readonly name: string;
+    private readonly assets: Asset[] = [];
 
-  public constructor(scheduledEvents: ScheduledEvent[]) {
-    this.scheduledEvents = scheduledEvents;
-  }
+    public constructor(name: string, assets: Asset[]) {
+        this.name = name;
+        this.assets = assets;
+    }
 
-  public get stages() {
-    return this.scheduledEvents.filter(isScheduledEventStage);
-  }
+    public get stages() {
+        return this.assets.filter(asset => asset.isStage());
+    }
 }

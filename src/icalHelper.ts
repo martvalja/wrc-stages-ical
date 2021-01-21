@@ -1,18 +1,18 @@
 import ical from 'ical-generator';
 
-import ScheduledEvent from './model/scheduledEvent';
+import Asset from './model/asset';
 
-export const createIcal = (events: ScheduledEvent[]) => {
+export const createIcal = (stages: Asset[]) => {
   const cal = ical();
   cal.domain('wrc.com');
-  events.forEach((scheduledEvent) => createEvent(cal, scheduledEvent));
+  stages.forEach((stage) => createEvent(cal, stage));
   return cal;
 };
 
-const createEvent = (cal: ical.ICalCalendar, scheduledEvent: ScheduledEvent) => {
+const createEvent = (cal: ical.ICalCalendar, stage: Asset) => {
   cal.createEvent({
-    end: scheduledEvent.endDate,
-    start: scheduledEvent.startDate,
-    summary: scheduledEvent.title,
+    end: stage.end,
+    start: stage.start,
+    summary: stage.title,
   });
 };

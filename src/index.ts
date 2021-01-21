@@ -1,16 +1,14 @@
 import fetch from 'node-fetch';
 
 import {createIcal} from './icalHelper';
-import {mapRawDataToScheduledEvents} from './jsonToScheduledEventMapper';
-import Rally from './model/rally';
+import {fromJson} from './helper/rally-helper';
 
-const dataUrl = 'https://plus.wrc.com/cache/epgData/epgActive.json';
+const dataUrl = 'https://api.wrc.com/sdb/rallyevent/active';
 
 const fetchWrcData = async () => {
   const response = await fetch(dataUrl);
   const rawData = await response.json();
-  const events = mapRawDataToScheduledEvents(rawData);
-  return new Rally(events);
+  return fromJson(rawData);
 };
 
 export const handler = async (_event: any = {}): Promise<any> => {
