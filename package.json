@@ -13,7 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "ical-generator": "^1.15.4",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "node-fetch": "^2.6.1",
     "typescript": "^4.1.3"
   },
